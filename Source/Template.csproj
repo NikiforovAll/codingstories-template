@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Build">
+    <PackageType>Template</PackageType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Product>Epam.CodingStories.Template</Product>
+    <Description>Promotes developers to create new Coding Stories</Description>
+    <PackageTags>dotnetnew;template;codingstories</PackageTags>
+  </PropertyGroup>
+
+  <!-- <ItemGroup Label="Package References">
+    <PackageReference Include="MinVer" PrivateAssets="all" Version="2.4.0" />
+  </ItemGroup> -->
+
+  <!-- <ItemGroup Label="Files">
+    <Content Include="**\*" Exclude="**\bin\**\*;**\obj\**\*;**\.vs\**\*" />
+    <Compile Remove="**\*" />
+    <None Include="..\Images\Icon-256x256.png" Pack="true" PackagePath="\" />
+  </ItemGroup> -->
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+  <Target Name="Versioning" BeforeTargets="MinVer">
+    <PropertyGroup Label="Build">
+      <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
+      <MinVerTagPrefix>$(PackageId).</MinVerTagPrefix>
+      <MinVerVerbosity>normal</MinVerVerbosity>
+    </PropertyGroup>
+  </Target>
+
+</Project>

@@ -1,0 +1,26 @@
+<Project>
+
+  <PropertyGroup Label="Build">
+    <LangVersion>latest</LangVersion>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Authors>Oleksii Nikiforov</Authors>
+    <Company>EPAM</Company>
+    <Copyright>Copyright © Oleksii Nikiforov. All rights Reserved</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/NikiforovAll/codingstories-template</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NikiforovAll/codingstories-template.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>https://github.com/NikiforovAll/codingstories-template/releases</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="all" Version="16.8.55" />
+    <PackageReference Include="MinVer" PrivateAssets="all" Version="2.4.0" />
+  </ItemGroup>
+
+</Project>

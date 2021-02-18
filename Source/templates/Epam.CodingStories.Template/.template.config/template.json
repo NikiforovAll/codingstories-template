@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Oleksii Nikiforov",
+  "classifications": [ "Epam", "CodingStories" ],
+  "identity": "Epam.CodingStories.Template",
+  "name": "Coding Stories Template",
+  "description": "A solution and project for creating a coding story.",
+  "shortName": "story",
+  "sourceName": "CodingStoriesTemplate",
+  "preferNameDirectory": true,
+  "defaultName": "CodingStory1"
+}
