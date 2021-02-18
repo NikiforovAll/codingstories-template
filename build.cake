@@ -37,27 +37,27 @@ Task("Build")
             });
     });
 
-Task("Test")
-    .Description("Runs unit tests and outputs test results to the artefacts directory.")
-    .DoesForEach(GetFiles("./Tests/**/*.csproj"), project =>
-    {
-        DotNetCoreTest(
-            project.ToString(),
-            new DotNetCoreTestSettings()
-            {
-                Collectors = new string[] { "XPlat Code Coverage" },
-                Configuration = configuration,
-                Loggers = new string[]
-                {
-                    $"trx;LogFileName={project.GetFilenameWithoutExtension()}.trx",
-                    $"html;LogFileName={project.GetFilenameWithoutExtension()}.html",
-                },
-                NoBuild = true,
-                NoRestore = true,
-                ResultsDirectory = artefactsDirectory,
-                ArgumentCustomization = x => x.Append("--blame"),
-            });
-    });
+// Task("Test")
+//     .Description("Runs unit tests and outputs test results to the artefacts directory.")
+//     .DoesForEach(GetFiles("./Tests/**/*.csproj"), project =>
+//     {
+//         DotNetCoreTest(
+//             project.ToString(),
+//             new DotNetCoreTestSettings()
+//             {
+//                 Collectors = new string[] { "XPlat Code Coverage" },
+//                 Configuration = configuration,
+//                 Loggers = new string[]
+//                 {
+//                     $"trx;LogFileName={project.GetFilenameWithoutExtension()}.trx",
+//                     $"html;LogFileName={project.GetFilenameWithoutExtension()}.html",
+//                 },
+//                 NoBuild = true,
+//                 NoRestore = true,
+//                 ResultsDirectory = artefactsDirectory,
+//                 ArgumentCustomization = x => x.Append("--blame"),
+//             });
+//     });
 
 Task("Pack")
     .Description("Creates NuGet packages and outputs them to the artefacts directory.")
