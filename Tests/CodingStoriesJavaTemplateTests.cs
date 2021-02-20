@@ -27,7 +27,7 @@ namespace Epam.CodingStories.Template.Tests
         }
 
         [Theory]
-        [InlineData("my-coding-story")]
+        [InlineData("java-story")]
         public async Task CodingStoriesJavaTemplateTests(string name, params string[] arguments)
         {
             await InstallTemplateAsync().ConfigureAwait(false);
