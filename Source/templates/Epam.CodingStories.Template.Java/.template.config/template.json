@@ -5,8 +5,8 @@
     "Epam",
     "CodingStories"
   ],
-  "identity": "Epam.CodingStories.Template",
-  "name": "Coding Stories Template - Java",
+  "identity": "Epam.CodingStories.Template.Java",
+  "name": "Coding Stories Template",
   "description": "A solution and project for creating a coding story.",
   "shortName": "story-java",
   "sourceName": "CodingStoriesTemplate",
