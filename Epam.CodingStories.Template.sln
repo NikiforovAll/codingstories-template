@@ -63,6 +63,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template", "Source\Template.csproj", "{761522F4-0D20-4FB9-86DF-581A61FB9499}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.CodingStories.Template.Tests", "Tests\Epam.CodingStories.Template.Tests.csproj", "{66841C7E-C958-4782-893A-6ACEBA5C711E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{761522F4-0D20-4FB9-86DF-581A61FB9499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{761522F4-0D20-4FB9-86DF-581A61FB9499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{761522F4-0D20-4FB9-86DF-581A61FB9499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66841C7E-C958-4782-893A-6ACEBA5C711E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66841C7E-C958-4782-893A-6ACEBA5C711E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66841C7E-C958-4782-893A-6ACEBA5C711E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66841C7E-C958-4782-893A-6ACEBA5C711E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,46 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Oleksii Nikiforov",
-  "classifications": [ "Epam", "CodingStories" ],
+  "classifications": [
+    "Epam",
+    "CodingStories"
+  ],
   "identity": "Epam.CodingStories.Template",
   "name": "Coding Stories Template",
   "description": "A solution and project for creating a coding story.",
   "shortName": "story",
   "sourceName": "CodingStoriesTemplate",
   "preferNameDirectory": true,
-  "defaultName": "CodingStory1"
+  "defaultName": "CodingStory1",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "SkipOpenToDo": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Skips opening the to-do list for the project in a web browser.",
+      "defaultValue": "false"
+    }
+  },
+  // https://github.com/dotnet/templating/wiki/Post-Action-Registry
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(!SkipOpenToDo)",
+      "continueOnError": true,
+      "description ": "Open the to-do list for the project in a web browser.",
+      "args": {
+        "executable": "powershell.exe",
+        "args": "start TODO.html",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Open the TODO.html in a web browser to see a to-do list."
+        }
+      ]
+    }
+  ]
 }
