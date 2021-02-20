@@ -37,3 +37,10 @@ Description:
 Manual instructions: Open the TODO.html in a web browser to see a to-do list.
 Actual command: powershell.exe start TODO.html
 ```
+
+### Usage - Java
+
+`dotnet new story-java -n my-awesome-story`
+
+## Run in Docker (I don't have dotnet SDK installed)
+
