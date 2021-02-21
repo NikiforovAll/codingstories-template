@@ -92,3 +92,5 @@ Run build pipeline: `dotnet cake`
 ## Release
 
 The release of coding-stories-scaffolder docker image is manual and requires `PERSONAL_ACCESS_TOKEN` with corresponding claims.
+
+`docker push ghcr.io/nikiforovall/coding-stories-scaffolder`

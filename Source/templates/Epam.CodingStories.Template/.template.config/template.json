@@ -22,8 +22,30 @@
       "datatype": "bool",
       "description": "Skips opening the to-do list for the project in a web browser.",
       "defaultValue": "false"
+    },
+    "SkipDevContainer":{
+      "type": "parameter",
+      "dataType":"bool",
+      "description": "Skips devcontainer.",
+      "defaultValue": "false"
     }
   },
+  "guids": [
+    "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
+    "F03B2A91-6934-44A6-AE50-C2F4BC3ADB9B"
+  ],
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(SkipDevContainer)",
+          "exclude": [
+            ".devcontainer/**"
+          ]
+        }
+      ]
+    }
+  ],
   // https://github.com/dotnet/templating/wiki/Post-Action-Registry
   "postActions": [
     {
