@@ -7,7 +7,8 @@ namespace Epam.CodingStories.Template.Tests
     using Xunit;
     using Xunit.Abstractions;
 
-    public class CodingStoryTemplateTest
+    [Trait("Temlate", "CSharp")]
+    public class CodingStoriesCSharpTemplateTests
     {
         private const string TemplateName = "story";
         private const string SolutionFileName = "CodingStoriesTemplate.sln";
@@ -16,7 +17,7 @@ namespace Epam.CodingStories.Template.Tests
             "no-open-todo=true"
         };
 
-        public CodingStoryTemplateTest(ITestOutputHelper testOutputHelper)
+        public CodingStoriesCSharpTemplateTests(ITestOutputHelper testOutputHelper)
         {
             if (testOutputHelper is null)
             {
@@ -27,8 +28,8 @@ namespace Epam.CodingStories.Template.Tests
         }
 
         [Theory]
-        [InlineData("my-coding-story")]
-        public async Task CodingStoriesTemplateTests(string name, params string[] arguments)
+        [InlineData("MyStory")]
+        public async Task DefaultTemplate(string name, params string[] arguments)
         {
             await InstallTemplateAsync().ConfigureAwait(false);
             await using var tempDirectory = TempDirectory.NewTempDirectory();
@@ -40,8 +41,24 @@ namespace Epam.CodingStories.Template.Tests
 
             Assert.True(File.Exists(Path.Combine(project.DirectoryPath, "README.md")));
             Assert.True(File.Exists(Path.Combine(project.DirectoryPath, "TODO.html")));
+            Assert.True(Directory.Exists(Path.Combine(project.DirectoryPath, ".devcontainer")));
         }
 
-        private static Task InstallTemplateAsync() => DotnetNew.InstallAsync<CodingStoryTemplateTest>(SolutionFileName);
+        [Theory]
+        [InlineData("MyStory", "no-devcontainer=true")]
+        public async Task NoDevcontainer(string name, params string[] arguments)
+        {
+            await InstallTemplateAsync().ConfigureAwait(false);
+            await using var tempDirectory = TempDirectory.NewTempDirectory();
+            var project = await tempDirectory
+                .DotnetNewAsync(TemplateName, name, DefaultArguments.ToArguments(arguments))
+                .ConfigureAwait(false);
+            await project.DotnetRestoreAsync().ConfigureAwait(false);
+            await project.DotnetBuildAsync().ConfigureAwait(false);
+
+            Assert.False(Directory.Exists(Path.Combine(project.DirectoryPath, ".devcontainer")));
+        }
+
+        private static Task InstallTemplateAsync() => DotnetNew.InstallAsync<CodingStoriesCSharpTemplateTests>(SolutionFileName);
     }
 }

@@ -7,6 +7,7 @@ namespace Epam.CodingStories.Template.Tests
     using Xunit;
     using Xunit.Abstractions;
 
+    [Trait("Temlate", "Java")]
     public class CodingStoryJavaTemplateTest
     {
         private const string TemplateName = "story-java";
@@ -28,7 +29,7 @@ namespace Epam.CodingStories.Template.Tests
 
         [Theory]
         [InlineData("java-story")]
-        public async Task CodingStoriesJavaTemplateTests(string name, params string[] arguments)
+        public async Task DefaultTemplate(string name, params string[] arguments)
         {
             await InstallTemplateAsync().ConfigureAwait(false);
             await using var tempDirectory = TempDirectory.NewTempDirectory();
@@ -40,6 +41,6 @@ namespace Epam.CodingStories.Template.Tests
             Assert.True(File.Exists(Path.Combine(project.DirectoryPath, ".story.md")));
         }
 
-        private static Task InstallTemplateAsync() => DotnetNew.InstallAsync<CodingStoryTemplateTest>(SolutionFileName);
+        private static Task InstallTemplateAsync() => DotnetNew.InstallAsync<CodingStoriesCSharpTemplateTests>(SolutionFileName);
     }
 }
