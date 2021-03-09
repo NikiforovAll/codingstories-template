@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Product>Epam.CodingStories.Template</Product>
+    <!-- <Product>CodingStories.Template</Product> -->
+    <Title>CodingStory templates</Title>
     <Description>Promotes developers to create new Coding Stories</Description>
     <PackageTags>dotnetnew;template;codingstories</PackageTags>
   </PropertyGroup>

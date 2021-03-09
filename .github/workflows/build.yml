@@ -61,7 +61,7 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.event_name == 'release'
     environment:
       name: 'GitHub Packages'
-      url: https://github.com/Username/Project/packages
+      url: https://github.com/NikiforovAll/codingstories-template/packages
     runs-on: windows-latest
     steps:
       - name: 'Download Artefact'
@@ -69,7 +69,7 @@ jobs:
         with:
           name: 'windows-latest'
       - name: 'Dotnet NuGet Add Source'
-        run: dotnet nuget add source https://nuget.pkg.github.com/Username/index.json --name GitHub --username Username --password ${{secrets.GITHUB_TOKEN}}
+        run: dotnet nuget add source https://nuget.pkg.github.com/Username/index.json --name GitHub --username nikiforovall --password ${{secrets.GITHUB_TOKEN}}
         shell: pwsh
       - name: 'Dotnet NuGet Push'
         run: dotnet nuget push .\windows-latest\*.nupkg --api-key ${{ github.token }} --source GitHub --skip-duplicate
@@ -81,7 +81,7 @@ jobs:
     if: github.event_name == 'release'
     environment:
       name: 'NuGet'
-      url: https://www.nuget.org/packages/codingstories_template
+      url: https://www.nuget.org/packages/CodingStories.Template
     runs-on: windows-latest
     steps:
       - name: 'Download Artefact'
